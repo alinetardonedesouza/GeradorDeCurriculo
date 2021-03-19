@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <h3 class="alert-info">
+        <br />
+        <br />
+    </h3>
+
+</div>
+<div>
+    <a class="waves-effect waves-light btn" onclick="Show()" id="novo">Novo</a>
+    <a class="waves-effect waves-light btn" onclick="Hide()" id="listar">Listar</a>
+</div>
+<div id="formNovo">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+
+                    <a class="waves-effect waves-light btn-flat" id="btnDadosPessoais" onclick="teste()">+</a> Dados Pessoais
+                    <br />
+                    <div id="dadosPessoais">
+                        <p>
+                            <input id="nomeCompra" type="text" class="validate">
+                            <label for="nomeCompra">Nome da compra</label>
+                        </p>
+                        <p>
+                            <input id="valorCompra" type="text" class="validate">
+                            <label for="valorCompra">Valor da compra</label>
+                        </p>
+                        <p>
+                            <input id="dataPagamento" type="text" class="validate">
+                            <label for="dataPagamento">Data para pagamento</label>
+                        </p>
+
+                    </div>
+                    <a class="waves-effect waves-teal btn-flat" id="btnFormacao" onclick="Show()"><i class="material-icons">+</i></a>Formação Acadêmica
+                    <div id="formacao">
+                        <p>
+                            <input id="nomeCompra" type="text" class="validate">
+                            <label for="nomeCompra">Nome da compra</label>
+                        </p>
+                    </div>
+                    <p>
+                        <a class="waves-effect waves-light btn" id="salvar" style="float:right">Salvar</a>
+                    </p>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    function teste() {
+        ChangePlusMinus()
+        Show()
+    }
+
+    function ChangePlusMinus() {
+
+        $('#btnDadosPessoais').val('-');
+    }
+    function Show() {
+
+        $(document).ready(function () {
+            $("#novo").click(function () {
+                $("#formNovo").toggle();
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnDadosPessoais").click(function () {
+                $("#dadosPessoais").toggle();
+            });
+            
+        });
+
+        $(document).ready(function () {
+            $("#btnFormacao").click(function () {
+                $("#formacao").toggle();
+            });
+        });
+
+    }
+    //function Hide() {
+
+    //    $(document).ready(function () {
+    //        $("#fechar").click(function () {
+    //            $("#formNovo").hide();
+    //        });
+    //    });
+
+    //    $(document).ready(function () {
+    //        $("#btnFormacao").click(function () {
+    //            $("#formacao").hide();
+    //        });
+    //    });
+    //}
+    
+
+</script>
